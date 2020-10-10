@@ -27,10 +27,6 @@ public class ProductController {
         this.productService = productService;
     }
 
-    /**
-     * 1. GET operation to get all the products
-     * 2. POST to save a particular product.
-     */
     @ApiOperation("Get all Products")
     @ApiResponses({
             @ApiResponse(code = 200, message = "Retrieves products", response = Product.class)
