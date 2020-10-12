@@ -5,7 +5,6 @@ import com.manin.productservice.service.ProductService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,7 +18,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @Controller
 public class ProductController {
-    public static final String PRODUCT_URl = "/product";
+    public static final String PRODUCT_URL = "/product";
     public static final String PRODUCT_URL_ID = "/product/{id}";
     private ProductService productService;
 
@@ -31,7 +30,7 @@ public class ProductController {
     @ApiResponses({
             @ApiResponse(code = 200, message = "Retrieves products", response = Product.class)
     })
-    @GetMapping(path=PRODUCT_URl, produces = APPLICATION_JSON_VALUE)
+    @GetMapping(path= PRODUCT_URL, produces = APPLICATION_JSON_VALUE)
     @ResponseBody
     public List<Product> getAllProducts() {
         return productService.getAllProducts();
@@ -51,7 +50,7 @@ public class ProductController {
     @ApiResponses({
             @ApiResponse(code = 200, message = "Retrieves product by Id", response = Product.class)
     })
-    @PostMapping(path=PRODUCT_URl, produces = APPLICATION_JSON_VALUE)
+    @PostMapping(path= PRODUCT_URL, produces = APPLICATION_JSON_VALUE)
     @ResponseBody
     public Product saveProduct(Product product) {
         return productService.saveProduct(product);
