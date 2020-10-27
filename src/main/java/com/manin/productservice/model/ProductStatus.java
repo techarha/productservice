@@ -1,6 +1,6 @@
 package com.manin.productservice.model;
 
-public enum  ProductStatus {
+public enum ProductStatus {
     DRAFT,
     APPROVED,
     REJECTED

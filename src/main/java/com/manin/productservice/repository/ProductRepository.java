@@ -1,5 +1,6 @@
-package com.manin.productservice.model;
+package com.manin.productservice.repository;
 
+import com.manin.productservice.model.Product;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

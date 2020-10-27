@@ -1,6 +1,6 @@
 package com.manin.productservice.model;
 
-public enum  MeasurementUnit {
+public enum MeasurementUnit {
     CMS,
     INCH,
     LITRE,

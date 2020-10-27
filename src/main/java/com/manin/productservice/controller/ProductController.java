@@ -30,7 +30,7 @@ public class ProductController {
     @ApiResponses({
             @ApiResponse(code = 200, message = "Retrieves products", response = Product.class)
     })
-    @GetMapping(path= PRODUCT_URL, produces = APPLICATION_JSON_VALUE)
+    @GetMapping(path = PRODUCT_URL, produces = APPLICATION_JSON_VALUE)
     @ResponseBody
     public List<Product> getAllProducts() {
         return productService.getAllProducts();
@@ -40,7 +40,7 @@ public class ProductController {
     @ApiResponses({
             @ApiResponse(code = 200, message = "Retrieves product by Id", response = Product.class)
     })
-    @GetMapping(path=PRODUCT_URL_ID, produces = APPLICATION_JSON_VALUE)
+    @GetMapping(path = PRODUCT_URL_ID, produces = APPLICATION_JSON_VALUE)
     @ResponseBody
     public Optional<Product> getProductById(@PathVariable String id) {
         return productService.getProductId(id);
@@ -48,9 +48,9 @@ public class ProductController {
 
     @ApiOperation("Persist product to Db")
     @ApiResponses({
-            @ApiResponse(code = 200, message = "Retrieves product by Id", response = Product.class)
+            @ApiResponse(code = 200, message = "Product saved to db", response = Product.class)
     })
-    @PostMapping(path= PRODUCT_URL, produces = APPLICATION_JSON_VALUE)
+    @PostMapping(path = PRODUCT_URL, produces = APPLICATION_JSON_VALUE)
     @ResponseBody
     public Product saveProduct(Product product) {
         return productService.saveProduct(product);

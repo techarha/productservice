@@ -1,7 +1,7 @@
 package com.manin.productservice.service;
 
 import com.manin.productservice.model.Product;
-import com.manin.productservice.model.ProductRepository;
+import com.manin.productservice.repository.ProductRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

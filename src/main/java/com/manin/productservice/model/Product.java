@@ -4,6 +4,7 @@ import io.swagger.annotations.ApiModel;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
 /**
@@ -13,16 +14,23 @@ import java.math.BigDecimal;
 @ApiModel(description = "Defines a Product")
 @Document
 public class Product {
+    // TODO: should have a generation strategy ?,  maybe a Brand-productName-subCategory
     @Id
     private String id;
+    @NotNull(message = "Category can't be null")
     private String category;
+    @NotNull(message = "Sub Category can't be null")
     private String subCategory;
+    @NotNull(message = "Brand can't be null")
     private String brand;
+    @NotNull(message = "Product name can't be null")
     private String productName;
     private String size;
+    @NotNull(message = "Marp can't be null")
     private BigDecimal mrp;
     private String hsnCode;
-    private String gstInCode;
+    @NotNull(message = "Gst Tax Code can't be null")
+    private ProductGstCode gstTaxCode;
     //TODO: check, maybe we do not need any size units as of now, initially.
     private MeasurementUnit sizeUnit;
     private String capacity;
@@ -87,12 +95,12 @@ public class Product {
         this.hsnCode = hsnCode;
     }
 
-    public String getGstInCode() {
-        return gstInCode;
+    public ProductGstCode getGstTaxCode() {
+        return gstTaxCode;
     }
 
-    public void setGstInCode(String gstInCode) {
-        this.gstInCode = gstInCode;
+    public void setGstTaxCode(ProductGstCode gstTaxCode) {
+        this.gstTaxCode = gstTaxCode;
     }
 
     public String getProductName() {
